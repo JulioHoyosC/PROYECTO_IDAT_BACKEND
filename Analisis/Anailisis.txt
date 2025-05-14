@@ -1,0 +1,192 @@
+
+Desarrollar un backend funcional para una aplicación de e-commerce que permita:
+	•	Registrar usuarios
+	•	Agregar y consultar productos
+	•	Gestionar un carrito de compras
+	•	Crear y visualizar órdenes de compra
+
+
+
+Entidad	     Requerimiento Funcional		
+Cliente	     (Puede registarse siempre y cuando quiera acceder a Descuentos)(No es obligatorio)		
+Productos	 Hay productos que pueden tener un descuento como otros que no		
+Stock	     Que mande un mensaje de alert cuando ya no haya stock de un producto, se debe actualizar por cada venta hecha		
+Tipo_Producto	Se debe poder agregar,eliminar 		
+Usuario	     para crear un usuario se necestia Nombre,Apellido,Documento,Email,número(Obligatorio para que funcione el login y acceda a los descuentos).2 para ingresar con un usuario se requiere usuario y clave si la clave es correcta ingresar y responder con  login exitoso si la clave es incorrecta responder con mensjae de error		
+Pago	     Solo se puede pagar con efectivo o yape (No es necesario un usuario)		
+Documento	 Se entregara después de hacer la compra		
+Delivery	 Es obligatorio poner la dirección y adicionar un mónto por ello 		
+Promociones	 Es para cualquier tipo de usuario		
+Rol	         usuario_administrador,  usuario_entrega		
+Descuentos	 Solo para los usuarios que hayan hecho el login		
+
+
+
+
+Entidad 				Requerimiento Funcional 
+
+Persona 				Crear una persona de tipo cliente 
+
+						Actualizar una persona de tipo cliente 
+
+						Eliminar una persona de tipo cliente 
+
+						Crear una Persona de tipo usuario 
+
+ 
+
+Productos 				Crear Producto 
+
+						Actualizar Producto 
+
+						Eliminar Producto 
+
+						Validar Stock de Producto 
+
+						Validar descuento 
+
+						Validar Promocion 
+
+Stock 					CrearStock 
+
+						DescontarStock 
+
+						ValidarStock 
+
+						NotificacionStockPorVencer 
+
+						Tipo_Producto 
+
+						Crear Familia de productos 
+
+						Crear Sub familia de producto 
+
+  
+
+Usuario 				Crear usuario 
+
+						Listar Usuarios del sistema 
+
+						Modificar Usuario 
+
+						Eliminar usuario 
+
+						Validar Acceso a Sistema 
+
+
+
+Pago 					Crear tipo de pago 
+
+						Modificar Tipo de Pago 
+
+						Eliminar tipo de pago 
+
+						Listar tipo de pago 
+
+
+
+
+Documento 				Crear documento  
+
+						Modificar documento 
+
+						Eliminar documento 
+
+						Listar documentos 
+
+
+
+
+Delivery 				CrearForma de entrega 
+
+						Modificar forma de entrega 
+
+						Eliminar forma de entrega 
+
+						Listar pedidos por entregar 
+
+
+
+
+Estado 					Crear estado de entrega 
+
+						Modificar estado de entrega 
+
+						Eliminar estado de entrega 
+
+						Listar estados 
+
+
+
+
+Rol 					Crear rol de sistema 
+
+						Modificar rol de sistema  
+
+						Eliminar rol de sistema 
+
+						Listar roles de sistema 
+
+
+
+
+Descuentos 				Solo para los usuarios que hayan hecho el login 
+
+
+
+Lógica y Funcionalidades
+
+✅ Usuarios
+	•	Registro de usuarios con nombre, email, contraseña.
+	•	Controlador bien separado.
+	•	Se puede extender con login, validaciones, roles, etc.
+
+✅ Productos
+	•	Crear productos nuevos.
+	•	Consultar lista de productos.
+	•	Consultar producto por ID.
+
+✅ Carrito (si ya está empezado)
+	•	Se puede agregar lógica de agregar/quitar productos.
+	•	Calcular totales, actualizar cantidades.
+
+✅ Órdenes (en progreso)
+	•	Crear orden a partir del carrito.
+	•	Mostrar historial de órdenes por usuario.
+
+
+Proyecto_IDAT_BACKEND/
+│
+├── controllers/          # Lógica de negocio
+│   ├── usuarioController.js
+│   ├── productoController.js
+│   ├── carroController.js
+│	└── ordenController.js
+│
+├── models/               # Clases que representan entidades
+│   ├── Usuario.js
+│   ├── Producto.js
+│   ├── Orden.js
+│	└── Carro.js
+│	
+├── routes/               # Define las rutas y endpoints
+│   ├── usuarioRoutes.js
+│   ├── productoRoutes.js
+│   ├── ordenRoutes.js
+│	└── carroRoutes.js
+├── data/                 # Datos simulados (por ahora)
+│   └── db.js
+│
+├── config/               # Conexión futura a MongoDB
+│   └── db.js
+│
+├── untils/
+│	├──	emailService.js
+│	└── stockAlert.js
+│
+│
+├── server.js             # Punto de entrada
+├── .env                  # Variables de entorno
+└── README.md             # Documentación del proyecto
+
+

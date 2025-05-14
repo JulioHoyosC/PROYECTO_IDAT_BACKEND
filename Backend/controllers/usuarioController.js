@@ -1,4 +1,3 @@
-// controllers/usuarioController.js
 
 const { usuarios } = require('../data/db');
 

@@ -157,36 +157,45 @@ Lógica y Funcionalidades
 
 Proyecto_IDAT_BACKEND/
 │
-├── controllers/          # Lógica de negocio
-│   ├── usuarioController.js
-│   ├── productoController.js
-│   ├── carroController.js
-│	└── ordenController.js
+├──	Algoritmo
+│	└── algoritmo.txt
 │
-├── models/               # Clases que representan entidades
-│   ├── Usuario.js
-│   ├── Producto.js
-│   ├── Orden.js
-│	└── Carro.js
-│	
-├── routes/               # Define las rutas y endpoints
-│   ├── usuarioRoutes.js
-│   ├── productoRoutes.js
-│   ├── ordenRoutes.js
-│	└── carroRoutes.js
-├── data/                 # Datos simulados (por ahora)
-│   └── db.js
+├──	Analisis
+│	└── analisis.txt
 │
-├── config/               # Conexión futura a MongoDB
-│   └── db.js
 │
-├── untils/
+├──	Backend/
+│	│
+│	├──	controllers/          			# Lógica de negocio
+│   │	├── usuarioController.js
+│   │	├── productoController.js
+│   │	├── carroController.js
+│	│	└── ordenController.js
+│	│
+│	├── models/               			# Clases que representan entidades
+│   │	├── Usuario.js
+│   │	├── Producto.js
+│   │	├── Orden.js
+│	│	└── Carro.js
+│	│
+│	├── routes/               			# Define las rutas y endpoints
+│   │	├── usuarioRoutes.js
+│   │	├── productoRoutes.js
+│   │	├── ordenRoutes.js
+│	│	└── carroRoutes.js
+│ 	│
+│	├──	data/                 			# Datos simulados (por ahora)
+│   │	└── db.js
+│	│
+│ 	├──	config/               			# Conexión futura a MongoDB
+│   │	└── db.js
+│	│
+│	├── untils/
 │	├──	emailService.js
 │	└── stockAlert.js
 │
-│
-├── server.js             # Punto de entrada
-├── .env                  # Variables de entorno
-└── README.md             # Documentación del proyecto
+├── server.js             				# Punto de entrada
+├── .env                  				# Variables de entorno
+└── README.md             				# Documentación del proyecto
 
 

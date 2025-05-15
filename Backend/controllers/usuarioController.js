@@ -1,5 +1,5 @@
 
-const { usuarios } = require('../data/db');
+const {usuarios} = require('/Users/juliohoyos/Desktop/Proyecto_IDAT_BACKEND/Backend/data/db.js');
 
 exports.registrarUsuario = (req, res) => {
   const { nombre, email, password } = req.body;

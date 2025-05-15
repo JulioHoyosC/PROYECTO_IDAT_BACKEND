@@ -1,6 +1,5 @@
 
-const { carro } = require('../data/db'); // usando los datos de prueba
-
+const { carro } = require('/Users/juliohoyos/Desktop/Proyecto_IDAT_BACKEND/Backend/data/db.js'); // usando los datos de prueba
 const obtenerCarro = (req, res) => {
   res.json(carro);
 };

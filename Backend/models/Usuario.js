@@ -1,3 +1,5 @@
+const { registrarUsuario } = require("../controllers/usuarioController");
+
 class Usuario {
     constructor(id ,nombre, email, password,role = 'customer'){
         this.id = id;
@@ -7,6 +9,7 @@ class Usuario {
         this.role = role;
     }
 }
+
 
 
 module.exports = Usuario;

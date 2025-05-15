@@ -3,10 +3,10 @@ const express = require('express');
 const app = express();
 
 
-const usuarioRoutes = require('./routes/usuarioRoutes');
-const productoRoutes = require('./routes/productoRoutes');
-const carroRoutes = require('./routes/carroRoutes');
-const ordenRoutes = require('./routes/ordenRoutes');
+const usuarioRoutes = require('./Backend/routes/usuarioRoutes');
+const productoRoutes = require('./Backend/routes/productoRoutes');
+const carroRoutes = require('./Backend/routes/carroRoutes');
+const ordenRoutes = require('./Backend/routes/ordenRoutes');
 
 
 app.use(express.json());

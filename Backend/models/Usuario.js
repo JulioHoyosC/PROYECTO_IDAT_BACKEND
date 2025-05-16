@@ -1,4 +1,4 @@
-const { registrarUsuario } = require("../controllers/usuarioController");
+const {registrarUsuario } = require("../controllers/usuarioController");
 
 class Usuario {
     constructor(id ,nombre, email, password,role = 'customer'){

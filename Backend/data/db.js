@@ -1,17 +1,13 @@
-const usuarios = [{ id: 1, nombre: 'Juan', email: 'juan@example.com', password: '123456' },
-                 { id: 2, nombre: 'Maria', email: 'maria@xample.com', password: 'abcde' },];
+// Backend/data/db.js
+const { Pool } = require('pg');
+require('dotenv').config();
 
+const pool = new Pool({
+  connectionString: process.env.PG_URI, // definilo en .env
+});
 
-const productos = [{ id: 1, nombre: 'Pecho broasther', categoria: 'Broasther', precio: 16.00 },
-                  { id: 2, nombre: 'Alita broasther', categoria: 'Broasther', precio: 11.00 },];
-const ordenes = []
-const carrito= [ { id: 1, nombre: 'Pecho broasther', precio: 16.00, cantidad: 2 },
-                { id: 2, nombre: 'Alita broasther', precio: 11.00, cantidad: 1 },]
+pool.connect()
+  .then(() => console.log("✅ Conectado a PostgreSQL"))
+  .catch(err => console.error("❌ Error de conexión:", err));
 
-module.exports = {
-    usuarios,
-    productos,
-    ordenes,
-    carrito
-}
-module.exports = { productos }
+module.exports = pool;

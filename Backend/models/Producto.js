@@ -1,13 +1,33 @@
-class Producto {
-    constructor(id, nombre, precio, stock, descripcion, categoria,){
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-        this.descripcion = descripcion;
-        this.categoria = categoria;
-    }
-}
+const mongoose = require('mongoose');
 
+const productoSchema = new mongoose.Schema({
+  nombre: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  descripcion: {
+    type: String,
+    trim: true
+  },
+  precio: {
+    type: Number,
+    required: true
+  },
+  stock: {
+    type: Number,
+    default: 0
+  },
+  imagen: {
+    type: String
+  },
+  categoria: {
+    type: String,
+    trim: true
+  }
+}, {
+  timestamps: true
+});
 
-module.exports = Producto;
+module.exports = mongoose.model('Producto', productoSchema);
+    

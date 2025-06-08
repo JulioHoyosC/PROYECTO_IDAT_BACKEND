@@ -1,16 +1,27 @@
-const {registrarUsuario } = require("../controllers/usuarioController");
+const mongoose = require('mongoose');
 
-class Usuario {
-    constructor(id ,nombre, email, password,role = 'customer'){
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-        this._password = password;
-        this.role = role;
-    }
-}
+const usuarioSchema = new mongoose.Schema({
+  nombre: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  correo: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  contraseña: {
+    type: String,
+    required: true
+  },
+  rol: {
+    type: String,
+    enum: ['cliente', 'admin'],
+    default: 'cliente'
+  }
+}, {
+  timestamps: true // agrega createdAt y updatedAt automáticamente
+});
 
-
-
-module.exports = Usuario;
-
+module.exports = mongoose.model('Usuario', usuarioSchema);

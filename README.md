@@ -7,3 +7,4 @@ Tecnologías utilizadas
 - Node.js
 - Express.js
 - JavaScript (ES6)
+- Mongoose

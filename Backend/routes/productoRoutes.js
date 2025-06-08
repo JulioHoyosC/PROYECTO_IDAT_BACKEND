@@ -10,14 +10,16 @@ const {
 } = require('../controllers/productoController');
 
 const verificarToken = require('../middleware/authMiddleware');
+const verificarRol = require('../middleware/roleMiddleware');
 const validarProducto = require('../validators/productoValidator');
 
-// Aplicar validaciones en crear y actualizar
-router.post('/', verificarToken, validarProducto, crearProducto);
-router.put('/:id', verificarToken, validarProducto, actualizarProducto);
+// Solo admin puede crear, actualizar y eliminar productos
+router.post('/', verificarToken, verificarRol('admin'), validarProducto, crearProducto);
+router.put('/:id', verificarToken, verificarRol('admin'), validarProducto, actualizarProducto);
+router.delete('/:id', verificarToken, verificarRol('admin'), eliminarProducto);
 
+// Público
 router.get('/', obtenerProductos);
 router.get('/:id', obtenerProducto);
-router.delete('/:id', verificarToken, eliminarProducto);
 
 module.exports = router;
